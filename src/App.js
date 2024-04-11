@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ShowMovies from './Components/ShowMovies.jsx';
 import MovieDetail from "./Components/MovieDetail.jsx";
 import ElementsTable from "./Components/ElementsTable.jsx";
+import Navbar from "./Components/Navbar.jsx";
 
 const columnasMedia = ["serial", "titulo", "urlPelicula"];
 const columnasGenero = ["nombre", "estado", "descripcion"];
@@ -115,6 +115,7 @@ const formInputsTipo = [
 function App() {
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<ElementsTable modelo="media" columnas={columnasMedia} formInputs={formInputsMedia}/>}/>
         <Route path="/director" element={<ElementsTable modelo="director" columnas={columnasDirector} formInputs={formInputsDirector}/>}/>
@@ -126,6 +127,8 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
+
+
 }
 
 export default App;
