@@ -275,12 +275,12 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
 
   return (
     <div className='App'>
-
       <div className='container-fluid'>
 
         <div className='row mt-3'>
           <div className="col-md-4 offset-md-4">
             <div className="d-grid mx-auto">
+              <h1 className='text-center mb-4'>Administra {capitalizarString(modelo)}</h1>
               <button 
                 className='btn btn-dark'
                 data-bs-toggle='modal'
@@ -316,7 +316,7 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
                         <tr key={elemento._id}>
                           {
                             columnas.map((propiedad, i) => {
-                              return (<td key={i}>{ (propiedad === 'titulo' || propiedad === 'nombre') ? <NavLink to={`/${modelo}/${elemento._id}`}>{elemento[propiedad]}</NavLink> : elemento[propiedad] }</td>)
+                              return (<td key={i}>{ (propiedad === 'titulo') ? <NavLink to={`/${modelo}/${elemento._id}`}>{elemento[propiedad]}</NavLink> : elemento[propiedad] }</td>)
                             })
                           }
                           <td>
