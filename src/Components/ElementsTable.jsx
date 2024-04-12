@@ -276,11 +276,10 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
   return (
     <div className='App'>
       <div className='container-fluid'>
-
         <div className='row mt-3'>
           <div className="col-md-4 offset-md-4">
             <div className="d-grid mx-auto">
-              <h1 className='text-center mb-4'>Administra {capitalizarString(modelo)}</h1>
+              <h1 className='text-center mb-4'><span className='fw-semibold'>Administra</span> <span className='fw-bold'>{capitalizarString(modelo)}</span></h1>
               <button 
                 className='btn btn-dark'
                 data-bs-toggle='modal'
@@ -298,7 +297,7 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
         <div className='row mt-3'>
           <div className="col-12 col-lg-8 offset-0 offset-lg-2">
             <div className="table-responsive">
-              <table className="table table-bordered">
+              <table className="table table-sm table-borderless table-striped table-hover">
                 <thead>
                   <tr>
                     {
@@ -320,21 +319,25 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
                             })
                           }
                           <td>
-                            <button 
-                              onClick={ (e) => openModal( 2, elemento)}
-                              className="btn btn-warning"
-                              data-bs-toggle='modal'
-                              data-bs-target='#modalMovies'
-                              >
-                              <i className='fa-solid fa-edit'></i>
-                            </button>
-                            &nbsp;
-                            <button 
-                              className='btn btn-danger'
-                              onClick={() => eliminarElemento(elemento)}
-                              >
-                              <i className='w-3 fa-solid fa-trash'></i>
-                            </button>
+                            <div className='d-flex flex-row justify-content-center gap-3'>
+                              <button 
+                                onClick={ (e) => openModal( 2, elemento)}
+                                className="btn btn-warning"
+                                data-bs-toggle='modal'
+                                data-bs-target='#modalMovies'
+                                style={{ "width": "3.5rem" }}
+                                >
+                                <i className='fa-solid fa-edit'></i>
+                              </button>
+                              &nbsp;
+                              <button 
+                                className='btn btn-danger'
+                                onClick={() => eliminarElemento(elemento)}
+                                style={{ "width": "3.5rem" }}
+                                >
+                                <i className='w-3 fa-solid fa-trash'></i>
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       );
