@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const MovieDetail = ({modelo}) => {
 
-  const urlBase = 'http://localhost:4001'
+  const urlBase = 'https://laucam-api.onrender.com'
   const [elemento, setElemento] = useState()
 
   const {id} = useParams();
@@ -26,9 +26,9 @@ const MovieDetail = ({modelo}) => {
     <>
       {
         (elemento) && 
-        <div className='container-fluid mt-3'>
+        <div className='container-fluid mt-3 mb-5'>
           <div className='row'>
-            <div className='col-12 col-md-6 mx-auto'>
+            <div className='col-12 col-md-8 mx-auto'>
               <div>
                   <p className='mb-0 text-secondary'>Detalles sobre</p>
                 <div className='d-flex justify-content-between align-items-center'>
@@ -36,7 +36,7 @@ const MovieDetail = ({modelo}) => {
                   <p className='badge text-bg-secondary'><span className='pe-2'>Creado:</span> {elemento?.fechaCreacion.slice(0,10)}</p>
                 </div>
               </div>
-              <div className="card text-bg-dark border-0" style={{ "maxHeight": "66vh","overflow": "hidden", "minWidth": "60vh"}}>
+              <div className="card text-bg-dark border-0" style={{ "maxHeight":"60vh","minHeight": "70vh","overflow": "hidden", "minWidth": "60vh"}}>
                 <img src={elemento?.imagen} className="card-img" alt="..."/>
                 <div className="card-img-overlay" style={{"background-color": "rgba(0, 0, 0, 0.4)" }}>
                   <div className='d-flex flex-column justify-content-between h-100'>
