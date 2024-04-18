@@ -29,14 +29,35 @@ const ModalForm = ({
         }
       }
     }
+    console.log('desde validarCampos:')
+    console.log(errores)
+    return errores;
+  }
 
+  const validarUrl = errores => {
+    const patronUrl = /^(http|https):\/\/[\w.-]+(\.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-@?^=%&/~+#])?$/;
+    for(let input of formInputs) {
+      if(input.name === 'imagen' || input.name === 'urlPelicula') {
+        if((campos.hasOwnProperty(input.name) && campos[input.name].length > 0) && !patronUrl.test(campos[input.name])) {
+          
+          errores = {
+            ...errores,
+            [input.name]: [`${input.name} solo recibe url válidas`]
+          }
+        }
+      }
+    }
+    // console.log('desde validarUrl:')
     return errores;
   }
 
   const validarCampos = async () => {
     let parametros = {}
     let metodo;
-    let errores = validarCamposVacios()    
+    let errores = validarCamposVacios()   
+    errores = validarUrl(errores)
+
+    console.log(errores)
 
     setErrors(errores)
 

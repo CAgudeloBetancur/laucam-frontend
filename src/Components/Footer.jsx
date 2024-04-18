@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div class="container-fluid py-2 bg-light">
-    <div class="row">
-      <div class="col-12 col-md-8 mx-auto">
+    <div className="container-fluid py-2 bg-light">
+    <div className="row">
+      <div className="col-12 col-md-8 mx-auto">
         <div className='d-flex flex-column align-items-center'>
           <NavLink to="/" className="navbar-brand fw-bold fs-4">LauCam</NavLink>
           <div className='d-flex gap-3 mt-3'>
