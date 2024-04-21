@@ -4,6 +4,7 @@ import MovieDetail from "./Components/MovieDetail.jsx";
 import ElementsTable from "./Components/ElementsTable.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/Footer.jsx";
+import MainMovies from "./Components/MainMovies.jsx";
 
 import { 
   formInputsDirector, 
@@ -28,7 +29,8 @@ function App() {
         <div>
           <Navbar/>
           <Routes>
-            <Route path="/" element={<ElementsTable modelo="media" columnas={columnasMedia} formInputs={formInputsMedia}/>}/>
+            <Route path="/" element={<MainMovies/>}/>
+            <Route path="/media" element={<ElementsTable modelo="media" columnas={columnasMedia} formInputs={formInputsMedia}/>}/>
             <Route path="/director" element={<ElementsTable modelo="director" columnas={columnasDirector} formInputs={formInputsDirector}/>}/>
             <Route path="/tipo" element={<ElementsTable modelo="tipo" columnas={columnasTipo} formInputs={formInputsTipo}/>}/>
             <Route path="/productora" element={<ElementsTable modelo="productora" columnas={columnasProductora} formInputs={formInputsProductora}/>}/>

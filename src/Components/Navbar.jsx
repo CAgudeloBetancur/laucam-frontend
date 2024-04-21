@@ -22,7 +22,7 @@ const Navbar = () => {
                       <li><NavLink to="/productora" className="dropdown-item">Productora</NavLink></li>
                       <li><NavLink to="/director" className="dropdown-item">Director</NavLink></li>
                       <li><NavLink to="/genero" className="dropdown-item">Genero</NavLink></li>
-                      <li><NavLink to="/" className="dropdown-item">Media</NavLink></li>            
+                      <li><NavLink to="/media" className="dropdown-item">Media</NavLink></li>            
                   </ul>
                   </li>
                 </ul>
