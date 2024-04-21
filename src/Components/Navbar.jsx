@@ -2,8 +2,15 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const navbarStyles = {
+    position: 'sticky',
+    top: 0,
+    zIndex: 10
+  }
+
   return (
-    <div className="container-fluid bg-light">
+    <div className="container-fluid bg-light" style={navbarStyles}>
       <div className="row">
         <div className="col-12 col-md-8 mx-auto">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">

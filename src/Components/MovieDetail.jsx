@@ -67,7 +67,7 @@ const MovieDetail = ({modelo}) => {
                           </div>
                         </div>
                         <div className="mt-4">
-                          <a href={elemento?.urlPelicula} className="btn btn-primary">Ver pelicula</a>
+                          <a href={elemento?.urlPelicula} target='_blank' rel="noopener noreferrer" className="btn btn-primary">Ver pelicula</a>
                         </div>
                       </div>
                     </div>

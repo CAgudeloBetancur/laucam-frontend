@@ -1,0 +1,7 @@
+.efecto-hover {
+  transition: all .12s ease-in-out;
+}
+
+.efecto-hover:hover {
+  transform: scale(1.05);
+}
