@@ -29,8 +29,6 @@ const ModalForm = ({
         }
       }
     }
-    console.log('desde validarCampos:')
-    console.log(errores)
     return errores;
   }
 
@@ -63,7 +61,7 @@ const ModalForm = ({
 
     setTimeout(() => {
       setErrors({})
-    },4000)
+    },7000)
 
     if(Object.keys(errores).length === 0) {
       for(let campo in campos) {
@@ -238,7 +236,7 @@ const ModalForm = ({
                           (errors[input.name] !== undefined && errors[input.name]?.length > 0) && 
                             errors[input.name]?.map((error, i) => {
                               return(
-                                <p key={i} className='text-danger mb-3'>{error}</p>
+                                <p key={i} className='text-danger mb-2'>{error}</p>
                               )
                           })
                         }

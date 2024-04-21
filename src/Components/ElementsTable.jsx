@@ -80,6 +80,14 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
       if(input.name==='estado') continue;
       if(input.type === 'select') {
         const response = await axios.get(`${urlBase}/${input.model}/lista?soloActivos=true`)
+        if(response.data.length === 0) {
+          setErrors(errors => {
+            return {
+              ...errors,
+              [input.name]: [`Debes registrar al menos un ${input.model}`]
+            }
+          })
+        }
         selectsOptions = {
           ...selectsOptions,
           [input.model]: response.data.map(registro => { return {value: registro._id, label: registro.nombre} })
@@ -135,14 +143,24 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
 
         {/* Tabla */}
 
-        <Table
-          capitalizarString = {capitalizarString}
-          openModal = {openModal}
-          modelo = {modelo}
-          columnas = {columnas}
-          elementos = {elementos}
-          show_alert = {show_alert}
-          enviarConsulta = {enviarConsulta}/>
+        {
+          elementos.length > 0 
+            ?
+              <Table
+                capitalizarString = {capitalizarString}
+                openModal = {openModal}
+                modelo = {modelo}
+                columnas = {columnas}
+                elementos = {elementos}
+                show_alert = {show_alert}
+                enviarConsulta = {enviarConsulta}/>
+            : 
+              <div className='row mt-3'>
+                <div className='col-md-8 mx-auto'>
+                  <p className='text-secondary text-center'>No hay elementos para mostrar</p>
+                </div>
+              </div>
+        }
 
       </div>
 
