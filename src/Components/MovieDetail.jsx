@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const MovieDetail = ({modelo}) => {
 
-  // const urlBase = 'https://laucam-api.onrender.com'
-  const urlBase = 'http://localhost:4001';
+  const urlBase = 'https://laucam-api.onrender.com'
+  // const urlBase = 'http://localhost:4001';
   const [elemento, setElemento] = useState()
 
   const {id} = useParams();

@@ -5,7 +5,8 @@ import './../styles/mainMovies.styles.css';
 
 const MainMovies = () => {
 
-    const urlBase = "http://localhost:4001";
+    const urlBase = 'https://laucam-api.onrender.com'
+    // const urlBase = "http://localhost:4001";
 
     const [listaPeliculas, setListaPeliculas] = useState([])
 
