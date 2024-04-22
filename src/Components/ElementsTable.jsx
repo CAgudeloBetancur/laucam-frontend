@@ -110,6 +110,17 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
       url: `${urlBase}/${modelo}/${(metodo !== 'POST') ? parametros._id : ''}`,
       data: parametros
     }).then(function(respuesta) {
+      let camposVacios = {}
+      for(let campo in campos) {
+        if(campo === '_id') continue;
+        camposVacios = {
+          ...camposVacios,
+          [campo]: (campo === 'generoPrincipal' || campo === 'directorPrincipal' || campo === 'productora' || campo === 'tipo') 
+                      ? 'default' 
+                      : ''
+        }
+      }
+      setCampos(camposVacios)
       document.getElementById('btnCerrar').click();
       obtenerLista();      
     }).catch(function(error) {
