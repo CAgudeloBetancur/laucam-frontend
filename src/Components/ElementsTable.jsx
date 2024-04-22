@@ -11,7 +11,7 @@ const ElementsTable = ({modelo, columnas, formInputs}) => {
 
   // Estados locales 
 
-  const urlBase = "https://laucam-api.onrender.com"
+  const urlBase = "https://laucam-backend.onrender.com"
   // const urlBase = "http://localhost:4001";
   const [campos, setCampos] = useState({});
   const [operacion, setOperacion] = useState(0);
